@@ -1,0 +1,19 @@
+import { BoardTetris } from '/scripts/BoardTetris.js'
+
+const canvasTetris = document.getElementById("canvas-tetris");
+const rows = 20;
+const cols = 10;
+const cellSize = 26;
+const space = 2;
+
+const board = new BoardTetris(canvasTetris, rows, cols, cellSize, space);
+
+function update() {
+
+    board.draw();
+
+    requestAnimationFrame(update);
+
+}
+
+update();
